@@ -1,0 +1,47 @@
+.block {
+  width: 50vw;
+  color: black;
+  position: absolute;
+  height: 100vh; 
+  background-color: black; 
+  transition: transform .5s 0s ease;
+}
+
+.right {
+  top: 0;
+  right: 0;
+  transform: translateX(100%);
+}
+.left {
+  top: 0;
+  left: 0;   
+  transform: translateX(-100%); 
+}
+
+.block.active.left {
+  transform: translateX(0%);
+}
+
+.block.active.right {
+  transform: translateX(0%);
+}
+
+.content {
+  color: white;
+  font-style: 30px;
+  line-height: 50px;
+  position: absolute;
+  transform: translateX(-50%) translateY(-100%);
+  left: 50%;
+  z-index: 1;
+}
+
+.content.active {
+  transform: translateX(-50%) translateY(50%);
+  transition: transform .5s .5s ease;
+}
+
+#btn {
+  position: relative;
+  z-index: 9999;
+}
