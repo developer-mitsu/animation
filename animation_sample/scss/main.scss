@@ -1,0 +1,147 @@
+h1 {
+    position: relative;
+    padding: 0.5em;
+    background: rgb(255, 176, 5);
+    color: black;
+}
+h1::before {
+    position: absolute;
+    content: '';
+    top: 100%;
+    left: 0;
+    border: none;
+    border-bottom: solid 15px transparent;
+    border-right: solid 20px rgb(231, 112, 0);
+}
+h1::after {
+    position: absolute;
+    content: '';
+    top: 100%;
+    right: 0;
+    border: none;
+    border-bottom: solid 15px transparent;
+    border-left: solid 20px rgb(231, 112, 0);
+}
+div.main-wrap {
+    width: 80%;
+    margin: 0 auto;
+    background-color: rgb(243, 243, 243);
+    padding: 2em;
+    box-sizing: border-box;
+}
+section:not(:last-of-type) {
+    margin-bottom: 5rem;
+}
+h2 {
+    font-size: 20px;
+    font-weight: bold;
+    color: rgb(231, 112, 0)!important;
+}
+
+.material-box {
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.26)
+}
+
+// 上記は関係なし
+// ====================================================================
+// 以下より本題
+
+// 例１ よくある下線が伸びるメニュー =======================================
+.sample1 {
+    width: 300px;
+    margin: 0 auto;
+    padding: 2em;
+    li {
+        list-style: none;
+        text-align: center;
+        height: 2.5em;
+        line-height: 2.5em;
+        a {
+            text-decoration: none;
+            color: gray;
+            display: inline-block;
+
+            // line-heightを元に戻す
+            line-height: 1em;
+            &::after {
+                transition: 0.5s;
+                content: '';
+                width: 100%;
+                height: 2px;
+                // afterで線を作り、最初は縮めておく
+                transform: scaleX(0);
+                background-color: black;
+                display: block;
+            }
+        }
+        &:hover {
+            a {
+                color: black;
+                &::after {
+                    // liにhoverした際に、下線を1倍に戻す(31行目で0倍にしています)
+                    transform: scaleX(1);
+                }
+            }
+        }
+    }
+}
+// ====================================================================
+
+
+// 例２ 押せるボタン =====================================================
+
+// ボタンの影の高さを変数で宣言
+$btn-shaddow: 5px;
+
+.sample2 {
+    width: 200px;
+    height: 50px;
+    background: linear-gradient(#000000, gray);
+    border-radius: 25px;
+    outline: none;
+    margin: 0 auto;
+    display: block;
+
+    // 影をつける
+    box-shadow: 0px $btn-shaddow #000000;
+
+    border: none;
+    color: white;
+    cursor: pointer;
+    transition: 0.1s ease;
+
+    // :activeで、ボタン押下時のスタイルを指定
+    &:active {
+        // 影を消す
+        box-shadow: none;
+        
+        // 影の高さの分だけ、↓に移動する
+        transform: translateY($btn-shaddow);
+    }
+}
+
+//　例３　画像を粋に動かす
+.sample3.wrap {
+    display: flex;
+    width: 90%;
+    justify-content: space-around;
+    padding: 0;
+    margin: 0 auto;
+    
+    .item {
+        // 以下重要。親からはみ出した場合、表示しないようにする。
+        overflow: hidden;
+        img {
+            height: 100%;
+        }
+    }
+    .item:hover {
+        img {
+            transition: 0.5s;
+
+            // 画像を少し大きくして、ちょっと回す
+            transform: scale(1.2) rotate(10deg);
+        }
+    }
+}

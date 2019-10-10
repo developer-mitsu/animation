@@ -1,0 +1,114 @@
+.flex {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.animation {
+    width: 300px;
+    height: 200px;
+    background-image: url("../img/sample1.jpg");
+    background-size: cover;
+    margin: 20px;
+}
+
+
+.animation:hover {
+    /*以下のアニメーションは、わかりやすさのために全てtransitionを適用。*/
+    transition: all 1000ms 0s ease;
+}
+
+
+
+
+.rotate:hover {
+
+    /*rotateを用いると、回転をかけることが可能。角度の指定方法はいくつかあるが、
+    馴染みの深い度数法(deg)で指定しよう。*/
+
+    /* rotateXを用いると、X軸を軸として回転*/
+    /* transform: rotateX(180deg); */
+    /*rotateYを用いると、Y軸を軸として回転*/
+    /* transform: rotateY(90deg); */
+
+    /*rotateZを用いると、Z軸を軸として回転*/
+    transform: rotate(360deg);
+
+}
+
+div.sample {
+    width: 300px;
+    height: 300px;
+    background-color: yellow;
+    transform: skewY(20deg);
+}
+
+.sample p {
+    width: 100%;
+    height: 100%;
+    transform: skewY(-20deg);
+
+}
+
+.skew:hover {
+
+    /*skewを用いると、傾ける事ができる。*/
+
+    /*skewXで、X軸方向への傾斜を設定できる。*/
+    /* transform: skewX(30deg); */
+
+    /*skewYで、Y軸方向への傾斜を設定できる。*/
+    /* transform: skewY(20deg); */
+
+    /*skew(X軸の傾斜角度, Y軸の傾斜角度)*/
+    /* transform: skew(30deg, 20deg); */
+
+}
+
+.translate:hover {
+
+    /* translateXを用いると、X軸方向に移動することが可能。*/
+    /* transform: translateX(-300px); */
+
+    /* translateYを用いると、Y軸方向に移動することが可能。*/
+    /* transform: translateY(-300px); */
+
+    /*!*translateを用いると、X軸、Y軸の移動を同時に指定できる。*!*/
+    /* transform: translate(100px, 100px); */
+
+
+
+    /*発展：translateZを用いると、Z軸方向(手前・奥)に移動することが可能。*/
+
+
+    transform: perspective(500px) translateZ(100px);
+
+    /*注意... 単体では動かない。perspectiveを指定する必要がある。*/
+    /*perspective(500px)とすれば、ユーザーが500px時点の距離にいることを想定し、
+    translateZ()の値の分だけ移動する。*/
+
+    /*translate3dを用いるとx軸、y軸、z軸を同時に指定することができるが、こちらもperspectiveの指定が必要。*/
+}
+
+.scale:hover {
+
+    /* scaleXを用いると、x軸方向に要素を拡大・縮小することが可能。*/
+    transform: scaleX(1.5);
+
+    /* scaleYを用いると、y軸方向に要素を拡大・縮小することが可能。*/
+    /*transform: scaleY(1.5);*/
+
+    /* scaleを用いると、x軸方向、y軸方向を同時指定できる。*/
+    transform: scale(1.5) rotate(10deg);
+
+    /* scaleZを用いると、Z軸方向への拡大・縮小を表現できるが、他の値と同時に使用しないと分かりづらい。*/
+    /*transform: perspective(400px) scaleZ(5) rotateY(30deg);*/
+
+}
+
+.outer {
+    height: 200px;
+    width: 300px;
+    overflow: hidden;
+}

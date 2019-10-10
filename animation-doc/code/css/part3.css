@@ -1,0 +1,108 @@
+.flex {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.animation {
+    width: 50px;
+    height: 50px;
+    background-color: black;
+
+    
+
+
+    /*================================================================================*/
+    animation: sample1 5s ease 0s infinite alternate none running;
+
+
+
+
+
+
+
+    /*!* 上記のanimationプロパティは、以下の要素で成立している。*!*/
+
+    /* animation-name ... アニメーションの名前（後述のkeyframeで定義）*/
+    animation-name: sample1;
+
+    /* animation-duration ... アニメーションの開始から終わるまでの時間(s,ms)*/
+    animation-duration: 5s;
+
+    /* animation-timing-function ... アニメーションのイージング*/
+    animation-timing-function: ease;
+
+    /* animation-delay ... アニメーションが開始するまでの時間(s,ms)*/
+    animation-delay: 0s;
+
+    /* animation-iteration-count ... アニメーションの繰り返し回数(infiniteで無限)*/
+    animation-iteration-count: infinite;
+
+    /* animation-direction ... アニメーションの再生順*/
+    animation-direction: alternate;
+
+    /*-------------------------------------------------*/
+    /* normalを指定すると、通常再生。
+        ループ時は 0%→100%→0%→100% ... */
+    /* animation-direction: normal;*/
+
+    /* reverseを指定すると、アニメーションを逆再生する。
+        ループ時は 100%→0%→100%→0% ... */
+    /* animation-direction: reverse;*/
+
+    /* alternateを指定すると、通常再生を行う。
+        ただし、ループ時、0%→100%→100%→0%→0%→100% ... のように、
+        通常再生、逆再生、通常再生、逆再生の順でループする。*/
+    /* animation-direction: alternate;*/
+
+    /* alternate-reverseを指定すると、逆再生を行う。
+        ただし、ループ時、100%→0%→0%→100%→100%→0% ... のように、
+        逆再生、通常再生、逆再生、通常再生の順でループする。*/
+    /* animation-direction: alternate-reverse;*/
+    /*-------------------------------------------------*/
+
+
+    /* animation-fill-mode ... アニメーションの開始前と終了後の状態*/
+    animation-fill-mode: none;
+
+    /* animation-play-state ... アニメーションの再生と停止*/
+    animation-play-state: running;
+    /*================================================================================*/
+
+}
+
+.animation:hover {
+    animation-play-state: paused;
+}
+
+/* 実際のアニメーション内容はkeyframeの中で設定する。*/
+
+@keyframes sample1 {
+
+    0% {
+        width: 100px;
+    }
+
+    10% {
+        width: 150px;
+        border-radius: 50%;
+        background-color: #9f9fa1;
+    }
+
+    20% {
+        height: 500px;
+        background-color: azure;
+    }
+
+    80% {
+        width: 500px;
+        background-color: blue;
+    }
+
+    100% {
+        height: 50px;
+        background-color: black;
+    }
+
+}

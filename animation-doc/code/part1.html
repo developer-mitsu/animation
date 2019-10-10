@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <title>CSSアニメーションについて(transition)</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script src="app.js"></script>
+    <link rel="stylesheet" type="text/css" href="reset.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+
+    <!--WEBサイト上でアニメーションを実装するには、javascriptで実装する方法と、
+    cssを用いて実装する方法の二種類の方法が存在する。-->
+
+    <!--CSSでアニメーションを用いるメリットは、以下のようなものがある。-->
+
+    <!--JavaScriptが不要-->
+    <!--単純なアニメーションならJavaScriptを利用するより実装が容易。-->
+    <!--JavaScriptが書けない人でもアニメーションの実装ができる。-->
+    <!--JavaScriptを利用したアニメーションと比べてパフォーマンスの遜色はない。
+    (利用シーンや実装方法によっては優れていることもある。)-->
+
+
+    <div class="box"></div>
+
+    <style>
+        .box {
+            width: 100px;
+            height: 100px;
+            background-color: blue;
+        }
+
+        .box:hover {
+            width: 800px;
+            background-color: black;
+            transition: all 1000ms 0s ease-in;
+
+
+
+
+
+
+
+
+
+
+            /*transitionを使用すると、CSSで容易にアニメーションを実装することができる。*/
+
+            /* ①transition-propertyを用いて、
+            どのプロパティにアニメーションを適用するか指定する。*/
+            /* transition-property: all; */
+
+            /*特定のプロパティを指定すると、そのプロパティだけ適用される。*/
+            /*transition-property: background-color;*/
+
+            /* ②transition-durationを用いて、
+            アニメーションの開始から終了までの時間を指定する。*/
+            /* transition-duration: 2000ms; */
+
+            /* ③transition-delayを用いて、
+            アニメーション開始までの時間を指定する。*/
+            /* transition-delay: 3s; */
+
+            /* ④transition-timing-functionを用いて、「イージング」を指定する。*/
+
+            /*================================================================================*/
+            /* ease(初期値) ... 開始と完了をなめらかに！*/
+            /* transition-timing-function: ease; */
+
+            /* ease-in ... ゆっくり始まる(徐々に加速)*/
+            /* transition-timing-function: ease-in; */
+
+            /* ease-out ... ゆっくり終わる(徐々に減速)*/
+            /* transition-timing-function: ease-out; */
+
+            /* ease-in-out ... ゆっくり始まってゆっくり終わる(徐々に加速し徐々に減速)*/
+            /* transition-timing-function: ease-in-out; */
+
+            /* linear ... 一定*/
+            /* transition-timing-function: linear; */
+
+
+
+
+
+
+
+
+            /*上記のように、イージングを使用することでアニメーションの加減速を調整できる。*/
+            /*自由に設定することも可能。
+            参考→ http://cubic-bezier.com
+                 https://easings.net/ja
+                 https://matthewlein.com/tools/ceaser
+                  */
+
+            /*transition-timing-function: cubic-bezier();*/
+            /*================================================================================*/
+
+        }
+    </style>
+
+</body>
+
+</html>

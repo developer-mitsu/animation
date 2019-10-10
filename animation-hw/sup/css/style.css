@@ -1,0 +1,104 @@
+body {
+  background-color: #232f3e;
+  margin: 0;
+  position: relative;
+  z-index: 2;
+}
+
+ul {
+  list-style: none;
+  margin-top: 0;
+}
+
+li {
+  line-height: 2em;
+}
+
+#active--icon {
+  font-size: 3em;
+}
+/* ----------------------- */
+/* ここから下を編集してください */
+/* ----------------------- */
+
+/* 課題 */
+/* 以下の要件を満たすよう実装してください */
+/* ・左上の三本線をクリックした時にメニューが表示される */
+/* ・もう一度押すと閉じる*/
+/* ・擬似クラスではなく、クラスの付け替えをJSで行う方法をとってください*/
+/* ・アニメーションの時間や動き、背景色などは目算で構いません */
+/* ・動きに関しては添付した動画を参照してください */
+
+
+#sp--menu--block {
+  background-color: transparent;
+  position: absolute;
+  z-index: 1;
+  display: block;
+  height: 100vh;
+  width: 100vw;
+}
+#sp--menu--block nav {
+  height: 95vh;
+  width: 70vw;
+  background: #fff;
+}
+#sp--menu--block nav ul {
+  margin-bottom: 0;
+}
+#sp--menu--block nav ul .sample__text--top {
+  color: #a9a9a9;
+}
+#sp--menu--block nav ul:not(:first-child) {
+  margin-top: 0;
+}
+
+
+
+
+/* 下の方にヒントを書いておきます */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ヒント */
+/* navが表示されていない時は、navは画面外の左に飛び出ているような状態です */
+/* これをjsやcssを用いて本来の位置に戻します */
+/* どうしても分からなければ「ハンバーガーメニュー css」あたりでググるか、 */
+/* 質問チャンネルでも聞いてください。 */

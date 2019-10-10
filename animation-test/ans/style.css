@@ -1,0 +1,39 @@
+/* 問題１ */
+/* box1にカーソルを重ねた時に、以下の内容のアニメーションを実行されるようにしてください */
+/* ・box1を右に500px移動させる */
+/* ・アニメーション完了総時間は1秒 */
+/* ・タイミングファンクションは任意 */
+
+.box1 {
+    transition: all 1s ease-in-out;
+}
+
+.box1:hover {
+    transform: translateX(500px);
+}
+
+/* 問題２ */
+/* box2に、以下の内容のアニメーションを実行されるようにしてください */
+/* 2秒間掛けて回転する */
+/* 回転の軸はZ軸 */
+/* 常に回転し続ける */
+
+@keyframes rotate {
+    0% {
+        transform: rotateZ(0deg);
+    }
+    100% {
+        transform: rotateZ(360deg);
+    }
+}
+.box2 {
+    animation: rotate 2s linear infinite normal;
+    transition: background-color 0.5s linear;
+}
+/* 問題３ 【発展問題】*/
+/* button要素「色を変える」をクリックした時に、box2の色を青に変えてください*/
+/* script.jsにJQを用いて書いてください */
+
+.box2.blue {
+    background-color: blue;
+}
